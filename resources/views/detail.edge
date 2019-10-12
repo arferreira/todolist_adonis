@@ -1,0 +1,13 @@
+@layout('main')
+
+@section('content')
+
+<h1>{{ task.title }}</h1>
+
+<p class="lead">
+  {{ task.body }}
+</p>
+<hr class="my-4" />
+<a href="/tasks" class="btn btn-warning btn-large">Back</a>
+
+@endsection
