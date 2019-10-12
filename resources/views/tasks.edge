@@ -1,0 +1,15 @@
+@layout('main')
+
+@section('content')
+  <h1>{{ title }}</h1>
+  <div class="alert alert-success" role="alert">
+    Task created with success!
+  </div>
+  <ul class="list-group">
+    @each(task in tasks)
+      <li class="list-group-item list-group-item-action">
+        {{ task.title }}
+      </li>
+    @endeach
+  </ul>
+@endsection
