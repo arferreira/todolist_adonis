@@ -51,6 +51,15 @@ class TaskController {
       task
     });
   }
+
+  async destroy({ params, response, session }) {
+    const task = await Task.find(params.id);
+
+    await task.delete();
+
+    session.flash({ notification: "Task deleted with success!" });
+    return response.redirect("/tasks");
+  }
 }
 
 module.exports = TaskController;
